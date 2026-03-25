@@ -1,0 +1,6 @@
+
+name: AdvancedAntiCheat
+version: 1.0
+main: de.anticheat.Main
+api-version: 1.21
+author: ChatGPT
