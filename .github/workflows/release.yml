@@ -28,5 +28,5 @@ jobs:
         run: >-
           gh release create "$RELEASE_TAG" --verify-tag
           --title "AdvancedAntiCheat – Minecraft 26.3"
-          --notes-file .github/release-notes-mc26.3.md --prerelease
+          --notes-file .github/release-notes-mc26.3.md --latest
           target/AdvancedAntiCheat-1.0.jar target/SHA256SUMS
