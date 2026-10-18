@@ -2,5 +2,5 @@
 name: AdvancedAntiCheat
 version: b0.1
 main: de.anticheat.Main
-api-version: 1.21
+api-version: '26.3'
 author: Felixwrn

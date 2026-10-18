@@ -14,7 +14,7 @@
 
     <!-- Java Version -->
     <properties>
-        <java.version>21</java.version>
+        <maven.compiler.release>25</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -26,11 +26,6 @@
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
 
-        <!-- ProtocolLib -->
-        <repository>
-            <id>dmulloy2</id>
-            <url>https://repo.dmulloy2.net/repository/public/</url>
-        </repository>
     </repositories>
 
     <!-- Dependencies -->
@@ -40,17 +35,9 @@
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.21-R0.1-SNAPSHOT</version>
+            <version>26.3.build.200-stable</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- ProtocolLib -->
-        <dependency>
-    <groupId>com.comphenix.protocol</groupId>
-    <artifactId>ProtocolLib</artifactId>
-    <version>5.3.0</version>
-    <scope>provided</scope>
-</dependency>
 
     </dependencies>
 
@@ -62,10 +49,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>3.16.0</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <release>${maven.compiler.release}</release>
                 </configuration>
             </plugin>
 
@@ -73,7 +59,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.5.0</version>
+                <version>3.6.2</version>
+                <configuration>
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
+                </configuration>
                 <executions>
                     <execution>
                         <phase>package</phase>
